@@ -11,8 +11,8 @@ urlpatterns = [
     path('', main_page, name="main"), 
     path('how_old', render_old, name="old"),
     path('order', render_order, name="order"),
-    path('functions/hey_you/', hey_you_page ,name="hey"),
-    path('codingbat/', codingbat_page, name="codingbat"),
-    path('functions/', function_page, name="function"),
+    path('functions/hey_you', hey_you_page ,name="hey"),
+    path('codingbat', codingbat_page, name="codingbat"),
+    path('functions', function_page, name="function"),
     path('admin/', admin.site.urls),
 ]
