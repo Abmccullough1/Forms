@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+{% block content %}
+<a href="{% url "codingbat" %}"><button>Back</button></a>
+
+<div>
+<form action="{% url "font-time" %}" method="GET">
+    {% csrf_token %}
+    <label>
+        <p>String:</p>
+        <input type="text" name="str_1">
+        <p>Repeating length:</p>
+        <input type="number" name="num_1">
+    </label>
+    <br>
+    <button>Submit</button>
+</form>
+{% if result is not none %}
+<p>{{result}}</p>
+{% endif %}
+</div>
+{% endblock content %}

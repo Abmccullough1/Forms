@@ -1,0 +1,19 @@
+{% extends "base.html"%}
+{% block content %}
+<a href="{% url "function" %}"><button> Back </button></a>
+
+<br><br><br>
+<div>
+<form action="{% url "hey" %}" method="GET">
+    {% csrf_token %}
+    <label>
+        <p>Name:</p>
+        <input type="text" name="name_input">
+    </label>
+    <button>Submit</button>
+</form>
+{% if name_input is not None %}
+<p>Hey, {{name_input}}!</p>
+{% endif %}
+</div>
+{% endblock content %}

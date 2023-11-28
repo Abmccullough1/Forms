@@ -1,0 +1,20 @@
+{% extends "base.html"%}
+{% block content %}
+<a href="{% url "function" %}"><button> Back </button></a>
+<div>
+    <form action="{% url "order" %}" method="GET">
+        {% csrf_token %}
+        <label>
+            <input type="number" name="burger" placeholder="Burgers">
+            <input type="number" name="fries" placeholder="Fries">
+            <input type="number" name="drink" placeholder="Drinks">
+        </label>
+        <br>
+        <button>Place Order</button>
+    </form>
+    <p>total:</p>
+    {% if total is not None%}
+    ${{total}}
+    {% endif %}
+</div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{%extends "base.html"%}
+{%block content%}
+
+
+    <a href="{% url "function" %}"><button> Back </button></a>
+    <form action="{% url "old" %}" method="GET">
+        {%csrf_token%}
+        <label>
+            <p class="Fonted">Input your birthyear and a provided year to find out your age in that year</p>
+            <p>Birthyear:</p>
+            <input type="number" name="birthyear">
+            <p>Provided Year:</P>
+            <input type="number" name="ageyear">
+        </label>
+        <button>Submit </button>
+    <form>
+    {% if answer is not None%}
+    <div class="AnswerDiv">
+    <p>Being born in {{birthyear}} your age in {{ageyear}} is:</p>
+    <p class="AgeAnswer">{{answer}}</p>
+    {% endif %}
+
+{%endblock content%}

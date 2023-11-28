@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{%block content%}
+<html>
+    <center>
+    <a href="{% url "hey" %}"><button>Hey you</button></a>
+    <a href="{% url "old" %}"><button>How old</button></a>
+    <a href="{% url "order" %}"><button> Can i take your order</button></a>
+    </center>
+    </html>
+{%endblock content%}
