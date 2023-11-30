@@ -105,13 +105,13 @@ def hey_you_page(request: HttpRequest):
 def render_old(request: HttpRequest):
     form = HowOldForm(request.GET)
     if form.is_valid():
-        birthyear = form.cleaned_data["birthyear"]
-        ageyear = form.cleaned_data["ageyear"]
-        answer = ageyear - birthyear
+        birth_year = form.cleaned_data["birth_year"]
+        age_year = form.cleaned_data["age_year"]
+        answer = age_year - birth_year
         return render(
             request,
-            "Age.html",
-            {"birthyear": birthyear, "ageyear": ageyear, "answer": answer},
+            "how_old.html",
+            {"birth_year": birth_year, "age_year": age_year, "answer": answer},
         )
     else:
         return render(request, "how_old.html")
@@ -127,10 +127,6 @@ def render_order(request: HttpRequest):
         FriesT = Fries * 1.5
         DrinkT = Drink * 1
         total = BurgerT + FriesT + DrinkT
-        return render(
-            request,
-            "Order.html",
-            {"Burger": Burger, "Fries": Fries, "Drink": Drink, "total": total},
-        )
+        return render(request,"order.html",{"Burger": Burger, "Fries": Fries, "Drink": Drink, "total": total})
     else:
         return render(request, "order.html")

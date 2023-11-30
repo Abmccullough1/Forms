@@ -8,16 +8,16 @@
         <label>
             <p class="Fonted">Input your birthyear and a provided year to find out your age in that year</p>
             <p>Birthyear:</p>
-            <input type="number" name="birthyear">
+            <input type="number" name="birth_year">
             <p>Provided Year:</P>
-            <input type="number" name="ageyear">
+            <input type="number" name="age_year">
         </label>
         <button>Submit </button>
     <form>
     {% if answer is not None%}
-    <div class="AnswerDiv">
-    <p>Being born in {{birthyear}} your age in {{ageyear}} is:</p>
-    <p class="AgeAnswer">{{answer}}</p>
+    <div >
+    <p>Being born in {{birth_year}} your age in {{age_year}} is:</p>
+    <p>{{answer}}</p>
     {% endif %}
 
 {%endblock content%}

@@ -6,8 +6,8 @@ class NameForm(forms.Form):
 
 
 class HowOldForm(forms.Form):
-    birthyear = forms.IntegerField()
-    ageyear = forms.IntegerField()
+    birth_year = forms.IntegerField()
+    age_year = forms.IntegerField()
 
 
 class OrderForm(forms.Form):
