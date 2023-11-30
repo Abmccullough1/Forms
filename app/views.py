@@ -96,8 +96,8 @@ def centered_average(request:HttpRequest) -> render:
 def hey_you_page(request: HttpRequest):
     form = NameForm(request.GET)
     if form.is_valid():
-        input_name = form.cleaned_data["input_name"]
-        return render(request, "hey.html", {"form":form, "input_name": input_name})
+        input_name = form.cleaned_data["name_input"]
+        return render(request, "hey.html", {"form":form, "name_input": input_name})
     else:
         return render(request, "hey.html", {"form":form})
 

@@ -2,7 +2,7 @@ from django import forms
 
 
 class NameForm(forms.Form):
-    input_name = forms.CharField()
+    name_input= forms.CharField()
 
 
 class HowOldForm(forms.Form):
